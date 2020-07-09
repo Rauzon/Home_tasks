@@ -1,0 +1,22 @@
+.content {
+    margin-top: 150px;
+    text-align: left;
+    list-style: none;
+}
+.content__title {
+ margin-bottom: 15px;
+}
+#list li{
+    margin: 1vh;
+    list-style: none;
+}
+#list li button {
+    margin-left: 10px;
+}
+.content__buttons {
+    margin-left: 3vw;
+    margin-top: 3vh;
+}
+.content__buttons button{
+    margin-right: 0.25vw;
+}
