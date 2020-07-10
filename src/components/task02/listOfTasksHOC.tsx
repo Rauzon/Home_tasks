@@ -8,7 +8,7 @@ export type tasksListType = {
     priority: string
 }
 
-export type priorityTasks = ""|"low"|"medium"|"high"
+export type priorityTasks = "all"|"low"|"medium"|"high"
 
 export const ListOfTasksHOC = () => {
 
@@ -19,7 +19,7 @@ export const ListOfTasksHOC = () => {
         {id: 4, title: "Почитать новую книгу Донцовой", priority: "low"}]);
 
     //for filter of tasks by click on a button
-    let [taskFilter, setTaskFilter] = useState<priorityTasks>("")
+    let [taskFilter, setTaskFilter] = useState<priorityTasks>("all")
 
     let filtredTasks = state
 

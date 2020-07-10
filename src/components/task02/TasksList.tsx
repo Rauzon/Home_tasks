@@ -27,6 +27,7 @@ export const TasksList:React.FC<propsType> = (props) => {
             </ul>
         </div>
         <div className={style.content__buttons}>
+            <button onClick={() => {props.filterTasks("all")}}>all</button>
             <button onClick={() => {props.filterTasks("low")}}>low</button>
             <button onClick={() => {props.filterTasks("medium")}}>medium</button>
             <button onClick={() => {props.filterTasks("high")}}>high</button>
