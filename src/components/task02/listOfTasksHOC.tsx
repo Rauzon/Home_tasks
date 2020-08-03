@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import style from './listOfTasks.module.css'
-import { TasksList } from "./TasksList";
+import {TasksList} from "./TasksList";
 
 export type tasksListType = {
     id: number
@@ -8,7 +8,7 @@ export type tasksListType = {
     priority: string
 }
 
-export type priorityTasks = "all"|"low"|"medium"|"high"
+export type priorityTasks = "all" | "low" | "medium" | "high"
 
 export const ListOfTasksHOC = () => {
 
@@ -23,13 +23,13 @@ export const ListOfTasksHOC = () => {
 
     let filtredTasks = state
 
-    if(taskFilter === "low"){
+    if (taskFilter === "low") {
         filtredTasks = filtredTasks.filter((t) => t.priority === "low")
     }
-    if(taskFilter === "medium"){
+    if (taskFilter === "medium") {
         filtredTasks = filtredTasks.filter((t) => t.priority === "medium")
     }
-    if(taskFilter === "high"){
+    if (taskFilter === "high") {
         filtredTasks = filtredTasks.filter((t) => t.priority === "high")
     }
 
@@ -40,12 +40,12 @@ export const ListOfTasksHOC = () => {
         setState(copy)
     }
 
-    const filterTasks = (prior:priorityTasks) => {
+    const filterTasks = (prior: priorityTasks) => {
         setTaskFilter(prior)
     }
 
     return <div className={style.content}>
         <TasksList tasks={filtredTasks}
-            removeTask={removeTask} filterTasks={filterTasks}/>
+                   removeTask={removeTask} filterTasks={filterTasks}/>
     </div>
 }
