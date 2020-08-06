@@ -1,29 +1,46 @@
-import React, {useState, ChangeEvent} from "react";
+import React, {useState, ChangeEvent, KeyboardEvent} from "react";
 import s from './Counter.module.css'
+import {v4 as uuidv4} from 'uuid'
 
+type DataObjType = {
+    id: string
+    name: string | number
+}
 
 export const Counter = () => {
 
-    let [value, setValue] = useState<number>(0)
+
     let [name, setName] = useState<string>('')
+    let [value, setValue] = useState<Array<DataObjType>>([])
 
     const increaseValue = () => {
-        setValue(value + 1);
-        {name && alert(name)};
+        if (name) {
+            setValue([...value, {id: uuidv4(), name}])
+            alert(`Hello, ${name}`)
+        }
         setName('')
     }
 
-    const changeInputValue = (e:ChangeEvent<HTMLInputElement>) => {
+
+    const onKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.charCode == 13) {
+            increaseValue();
+        }
+
+    }
+
+    const changeInputValue = (e: ChangeEvent<HTMLInputElement>): void => {
         setName(e.currentTarget.value)
     }
 
     return <div className={s.content}>
         <div className={s.content__inner}>
             <div className={s.content__text}>
-                <span>{value}</span>
+                <span>{value.length}</span>
             </div>
             <div className={s.content__input}>
-                <input value={name} onChange={changeInputValue}/>
+                <span>Enter your name:</span>
+                <input value={name} onChange={changeInputValue} onKeyPress={onKeyPress}/>
                 <button onClick={increaseValue}>increase</button>
             </div>
         </div>

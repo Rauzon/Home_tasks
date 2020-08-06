@@ -1,5 +1,5 @@
 .content {
-    width: 300px;
+    width: 400px;
     min-height: 100px;
     margin: 0 auto;
 
@@ -9,17 +9,19 @@
 
 .content__inner {
     top: 50%;
+
     transform: translateY(50%);
 }
 
 .content__text {
     width: 200px;
-    margin: 5px auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
 
-    border: 1px solid skyblue;
-    border-radius: 5px;
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
 }
 
 .content__input input {
-    margin-right: 5px;
+    margin: 0 5px;
 }
