@@ -1,7 +1,8 @@
-import React, {useState, ChangeEvent, KeyboardEvent} from "react";
+import React, {useState} from "react";
 import s from './Counter.module.css'
 import {v4 as uuidv4} from 'uuid'
 import {MyInput} from "../common/MyInput";
+import { CustomButton } from "../common/CustomButton";
 
 type DataObjType = {
     id: string
@@ -42,7 +43,7 @@ export const Counter = () => {
             <div className={s.content__input}>
                 <span>Enter your name:</span>
                 <MyInput value={name} onChange={changeInputValue} onKeyPress={onKeyPress}/>
-                <button onClick={increaseValue}>increase</button>
+                <CustomButton onClick={increaseValue} value={'increase'}/>
             </div>
         </div>
     </div>

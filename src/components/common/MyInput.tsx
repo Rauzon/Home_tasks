@@ -1,4 +1,6 @@
 import React, { ChangeEvent, KeyboardEvent } from "react";
+import s from './myInput.module.css';
+import {TextField} from "@material-ui/core";
 
 
 type MyInputPropsType = {
@@ -12,7 +14,9 @@ export const MyInput: React.FC<MyInputPropsType> = (props) => {
     const onChange = (e:ChangeEvent<HTMLInputElement>) => {
         const currentValue = e.currentTarget.value
 
-        if(currentValue && props.onChange){
+        const unvalidConditions = (currentValue !== undefined && currentValue !== null)
+
+        if(unvalidConditions && props.onChange){
             props.onChange(currentValue)
         }
     }
@@ -23,7 +27,7 @@ export const MyInput: React.FC<MyInputPropsType> = (props) => {
         }
     }
 
-    return <>
-        <input value={props.value} onChange={onChange} onKeyPress={onKeyPress}/>
-    </>
+    return <div className={s.text_field}>
+        <TextField  value={props.value} onChange={onChange} onKeyPress={onKeyPress}/>
+    </div>
 }
