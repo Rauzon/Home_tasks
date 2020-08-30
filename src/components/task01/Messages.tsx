@@ -14,7 +14,7 @@ export const Messages = () => {
 
     //data for MessageItem
     const messages:Array<messageItemType> = [
-        {id:1, name: "Masha", message: 'Did you buy me that i asked?', time: "10:39"}
+        {id:1, name: "Masha", message: 'Did you buy that i asked?', time: "10:39"}
     ]
 
     return <>

@@ -1,6 +1,7 @@
 import React, {useState, ChangeEvent, KeyboardEvent} from "react";
 import s from './Counter.module.css'
 import {v4 as uuidv4} from 'uuid'
+import {MyInput} from "../common/MyInput";
 
 type DataObjType = {
     id: string
@@ -22,15 +23,15 @@ export const Counter = () => {
     }
 
 
-    const onKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.charCode == 13) {
+    const onKeyPress = (currentKey: number) => {
+        if (currentKey === 13) {
             increaseValue();
         }
 
     }
 
-    const changeInputValue = (e: ChangeEvent<HTMLInputElement>): void => {
-        setName(e.currentTarget.value)
+    const changeInputValue = (currentValue:string): void => {
+        setName(currentValue)
     }
 
     return <div className={s.content}>
@@ -40,7 +41,7 @@ export const Counter = () => {
             </div>
             <div className={s.content__input}>
                 <span>Enter your name:</span>
-                <input value={name} onChange={changeInputValue} onKeyPress={onKeyPress}/>
+                <MyInput value={name} onChange={changeInputValue} onKeyPress={onKeyPress}/>
                 <button onClick={increaseValue}>increase</button>
             </div>
         </div>
