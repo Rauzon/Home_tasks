@@ -28,6 +28,6 @@ export const MyInput: React.FC<MyInputPropsType> = (props) => {
     }
 
     return <div className={s.text_field}>
-        <TextField  value={props.value} onChange={onChange} onKeyPress={onKeyPress}/>
+        <TextField  variant="outlined"  value={props.value} onChange={onChange} onKeyPress={onKeyPress}/>
     </div>
 }

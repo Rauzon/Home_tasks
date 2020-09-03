@@ -1,7 +1,10 @@
 .text_field{
     display: inline-block;
+    margin: 0 10px;
 }
 
 .text_field input{
-    margin: 0 20px;
+    width: 100px;
+    height: 1px;
+    padding: 16px 20px;
 }
