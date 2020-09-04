@@ -23,7 +23,7 @@ export const TasksList: React.FC<propsType> = (props) => {
     return <>
         <div className={style.content__tasks}>
             <div className={style.content__title}>
-                <h3>List of tasks on the day</h3>
+                <h3>List of tasks at a day</h3>
             </div>
             <ul id={style.list}>
                 {props.tasks.map((t) => {
