@@ -29,7 +29,9 @@ export const NavBar = () => {
                 <span></span>
             </button>
             <nav className={s.menu_list}>
-                {arrayOfLinks.map(el => <NavLink key={el.id} to={el.link}>{el.link}</NavLink>)}
+                {arrayOfLinks.map(el => {
+                    return <NavLink key={el.id} to={el.link}>{el.link}</NavLink>
+                })}
             </nav>
         </div>
     </div>
