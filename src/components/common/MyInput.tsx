@@ -12,6 +12,7 @@ type MyInputPropsType = {
 export const MyInput: React.FC<MyInputPropsType> = (props) => {
 
     const onChange = (e:ChangeEvent<HTMLInputElement>) => {
+
         const currentValue = e.currentTarget.value
 
         const unvalidConditions = (currentValue !== undefined && currentValue !== null)
@@ -28,6 +29,6 @@ export const MyInput: React.FC<MyInputPropsType> = (props) => {
     }
 
     return <div className={s.text_field}>
-        <TextField  variant="outlined"  value={props.value} onChange={onChange} onKeyPress={onKeyPress}/>
+        <TextField  variant="outlined"  value={props.value} onChange={onChange} />
     </div>
 }

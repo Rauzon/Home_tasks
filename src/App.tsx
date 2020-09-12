@@ -6,6 +6,7 @@ import {ListOfTasksHOC} from './components/task02/listOfTasksHOC';
 import {ShowCustomComponents} from './components/task04/ShowCustomCompoents';
 import {NavBar} from './components/NavBar';
 import {Route} from 'react-router-dom';
+import { EditableSpanContainer } from './components/common/EditableSpan/EditableSpanContainer';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
             <Route path={'/pre-junior'} render={() => <ListOfTasksHOC/>}/>
             <Route path={'/pre-junior'} render={() => <Counter/>}/>
             <Route path={'/pre-junior'} render={() => <ShowCustomComponents/>}/>
+            <Route path={'/junior'} render={() => <EditableSpanContainer />}/>
         </div>
     );
 }
