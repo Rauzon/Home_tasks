@@ -1,10 +1,16 @@
 .content {
-    margin-top: 150px;
+    margin: 20px 0 40px;
     text-align: left;
     list-style: none;
 }
+.content__tasks {
+    width: 400px;
+    height: 250px;
+    margin: 0 auto;
+}
+
 .content__title {
- margin-bottom: 15px;
+ margin:0px 0px 15px 45px;
 }
 #list li{
     margin: 1vh;
@@ -14,9 +20,11 @@
     margin-left: 10px;
 }
 .content__buttons {
+    display: flex;
+    justify-content: center;
     margin-left: 3vw;
     margin-top: 3vh;
 }
 .content__buttons button{
-    margin-right: 0.25vw;
+    margin-right: 1.25vw;
 }

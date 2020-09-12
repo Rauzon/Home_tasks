@@ -1,5 +1,4 @@
 import React from "react";
-import style from './messages.module.css';
 import {MessageItem} from "./MessageItem";
 
 

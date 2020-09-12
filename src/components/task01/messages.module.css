@@ -1,5 +1,14 @@
+.content{
+    display: block;
+    min-height: 200px;
+    position: relative;
+}
+
 .content__wrapper{
     display: flex;
+    position: absolute;
+    right: 50%;
+    transform: translateX(25%);
 }
 .content__wrapper_img{
     position: relative;

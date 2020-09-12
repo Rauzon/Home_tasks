@@ -11,7 +11,9 @@ export const MessageItem: React.FC<PropsType> = (props) => {
     return <div className={style.content}>
         <div className={style.content__wrapper}>
             <div className={style.content__wrapper_img}>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSebA8fFnNGT1sxNPZ882iVMNpbng0j_hdBZQ&usqp=CAU" alt=""/>
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSebA8fFnNGT1sxNPZ882iVMNpbng0j_hdBZQ&usqp=CAU"
+                    alt=""/>
             </div>
             <div className={style.content__wrapper_item}>
                 <div className={style.content__wrapper_item_message}>
