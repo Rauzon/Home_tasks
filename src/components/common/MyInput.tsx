@@ -15,9 +15,9 @@ export const MyInput: React.FC<MyInputPropsType> = (props) => {
 
         const currentValue = e.currentTarget.value
 
-        const unvalidConditions = (currentValue !== undefined && currentValue !== null)
+        // const unvalidConditions = (currentValue !== undefined && currentValue !== null)
 
-        if(unvalidConditions && props.onChange){
+        if(currentValue !== undefined && props.onChange){
             props.onChange(currentValue)
         }
     }

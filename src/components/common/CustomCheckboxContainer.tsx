@@ -28,9 +28,7 @@ export const CustomCheckbox: React.FC<CustomCheckboxPropsType> = (props) => {
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         let value = e.currentTarget.checked
 
-        const unvalidConditions = (value !== undefined && value !== null)
-
-        if (unvalidConditions && props.onChange) {
+        if (value && props.onChange) {
             props.onChange(value)
         }
     }
