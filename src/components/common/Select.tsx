@@ -1,51 +1,59 @@
 import React, {useState} from "react";
+import {Select} from "@material-ui/core";
 
 
 export const SelectContainer = () => {
 
-    const data: DataSelectType[] = ([{id: 1, value: 'task1'},
-        {id: 2, value: 'task2'},
-        {id: 3, value: 'task3'}])
+    const data: DataSelectType[] = ([{id: 1, title: 'task1'},
+        {id: 2, title: 'task2'},
+        {id: 3, title: 'task3'}])
 
-    const [value, setValue] = useState<string>('')
+    const [value, setValue] = useState<unknown>('')
 
-    const onChange = (value: string) => {
+    const onChange = (value: unknown) => {
 
         setValue(value)
     }
 
     return <>
-        <Select data={data} onChange={onChange} value={value}/>
+        <CustomSelect data={data} onChange={onChange} value={value}/>
     </>
 }
 
 
 export type DataSelectType = {
     id: number
-    value: string
+    title: string
 }
 
 type SelectPropsType = {
     data: DataSelectType[]
-    onChange?: (value: string) => void
-    value?: string
+    onChange: (value: unknown) => void
+    value: unknown
 }
 
-export const Select: React.FC<SelectPropsType> = (props) => {
-    debugger
-    const onChange = (e: React.FormEvent<HTMLSelectElement>) => {
+export const CustomSelect: React.FC<SelectPropsType> = (props) => {
+
+    const style = {
+        margin: '15px 10px',
+    }
+
+    const onChange = (e: React.ChangeEvent<{ value: unknown }>) => {
 
         if (e.currentTarget && props.onChange) {
-            debugger
             props.onChange(e.currentTarget.value)
         }
     }
 
     return <div>
-        <select onChange={onChange} value={props.value}>
+        <Select labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                onChange={onChange}
+                value={props.value}
+                style={style}>
             {props.data.map(field => {
-                return <option key={field.id} value={field.value}>{field.value}</option>
+                return <option key={field.id} value={field.title}>{field.title}</option>
             })}
-        </select>
+        </Select>
     </div>
 }
