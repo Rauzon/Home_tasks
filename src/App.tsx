@@ -7,7 +7,8 @@ import {ShowCustomComponents} from './components/task04/ShowCustomCompoents';
 import {NavBar} from './components/NavBar';
 import {Route} from 'react-router-dom';
 import {ShowEditeMode} from './components/task05/ShowEditeMode';
-import {DataSelectType, CustomSelect, SelectContainer} from './components/common/Select';
+import {DataSelectType, CustomSelect, SelectContainer} from './components/common/CustomSelect';
+import {CustomRadio, RadioContainer} from './components/common/CustomRadio';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path={'/pre-junior'} render={() => <ShowCustomComponents/>}/>
             <Route path={'/junior'} render={() => <ShowEditeMode/>}/>
             <Route path={'/junior'} render={() => <SelectContainer />}/>
+            <Route path={'/junior'} render={() => <RadioContainer />}/>
         </div>
     );
 }

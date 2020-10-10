@@ -45,12 +45,11 @@ export const CustomSelect: React.FC<SelectPropsType> = (props) => {
         }
     }
 
-    return <div>
+    return <div style={style}>
         <Select labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 onChange={onChange}
-                value={props.value}
-                style={style}>
+                value={props.value}>
             {props.data.map(field => {
                 return <option key={field.id} value={field.title}>{field.title}</option>
             })}
