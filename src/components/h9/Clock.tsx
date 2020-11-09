@@ -20,19 +20,19 @@ function Clock() {
         setTimerId(id);
     }
 
-    const doubleDateValueString = (date: number): string => {
+    const doubleValueOfDateString = (date: number): string => {
         return (date < 10) ? `0${date}` : date.toString()
     }
 
 
-    const stringHour = doubleDateValueString(date.getHours())
-    const stringMinutes = doubleDateValueString(date.getMinutes())
-    const stringSeconds = doubleDateValueString(date.getSeconds())
+    const stringHour = doubleValueOfDateString(date.getHours())
+    const stringMinutes = doubleValueOfDateString(date.getMinutes())
+    const stringSeconds = doubleValueOfDateString(date.getSeconds())
 
 
-    const stringDay = doubleDateValueString(date.getUTCDate())
-    const stringMounth = doubleDateValueString(date.getMonth() + 1)
-    const stringYear = doubleDateValueString(date.getFullYear())
+    const stringDay = doubleValueOfDateString(date.getUTCDate())
+    const stringMounth = doubleValueOfDateString(date.getMonth() + 1)
+    const stringYear = doubleValueOfDateString(date.getFullYear())
 
     const onMouseEnter = () => {
         setShow(true)
