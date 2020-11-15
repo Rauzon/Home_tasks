@@ -11,6 +11,7 @@ import {SelectContainer} from './components/common/CustomSelect';
 import {RadioContainer} from './components/common/CustomRadio';
 import HW8 from "./components/h8/HW8";
 import HW9 from './components/h9/HW9';
+import {HW10} from "./components/h10/HW10";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path={'/junior'} render={() => <RadioContainer />}/>
             <Route path={'/junior'} render={() => <HW8 />}/>
             <Route path={'/junior'} render={() => <HW9 />}/>
+            <Route path={'/junior'} render={() => <HW10 />}/>
         </div>
     );
 }
