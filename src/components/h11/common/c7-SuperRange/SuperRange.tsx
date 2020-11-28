@@ -1,5 +1,5 @@
 import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from "react";
-import s from "./SuperRange.module.css";
+import {createStyles, makeStyles, Slider, Theme, Tooltip} from "@material-ui/core";
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
@@ -10,34 +10,61 @@ type SuperRangePropsType = DefaultInputPropsType & { // и + ещё пропсы
     onChangeRange?: (value: number) => void
 };
 
-const SuperRange: React.FC<SuperRangePropsType> = (
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            width: 300 + theme.spacing(3) * 2,
+            margin: '0 auto',
+        },
+        margin: {
+            height: theme.spacing(3),
+        },
+    }),
+);
+
+export const SuperRange: React.FC<SuperRangePropsType> = (
     {
         type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
         onChange, onChangeRange,
         className,
-
-        ...restProps// все остальные пропсы попадут в объект restProps
+        value,
     }
 ) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>, num: number) => {
         onChange && onChange(e); // сохраняем старую функциональность
 
-        onChangeRange && onChangeRange(+e.currentTarget.value);
+        onChangeRange && onChangeRange(num);
     }
 
-    const finalRangeClassName = `${s.range} ${className ? className : ""}`;
+    const classes = useStyles();
 
     return (
         <>
-            <input
-                type={"range"}
-                onChange={onChangeCallback}
-                className={finalRangeClassName}
-
-                {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
-            />
+            <div className={classes.root}>
+                <Slider
+                    ValueLabelComponent={ValueLabelComponent}
+                    aria-label="custom thumb label"
+                    onChange={(e, num) => onChangeCallback(e, num)}
+                    value={value}
+                />
+            </div>
         </>
     );
 }
 
-export default SuperRange;
+interface IPropsValueLabelComponent {
+    children: React.ReactElement;
+    open: boolean;
+    value: number;
+}
+
+function ValueLabelComponent(props: IPropsValueLabelComponent) {
+    const {children, open, value} = props;
+
+    return (
+        <Tooltip open={open} enterTouchDelay={0} placement="top" title={value}>
+            {children}
+        </Tooltip>
+    );
+}
+
