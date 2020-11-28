@@ -13,6 +13,7 @@ import HW8 from "./components/h8/HW8";
 import HW9 from './components/h9/HW9';
 import {HW10} from "./components/h10/HW10";
 import { HW11 } from './components/h11/HW11';
+import {HW12} from "./components/h12/HW12";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path={'/junior'} render={() => <HW9 />}/>
             <Route path={'/junior'} render={() => <HW10 />}/>
             <Route path={'/junior'} render={() => <HW11 />}/>
+            <Route path={'/junior-plus'} render={() => <HW12 />}/>
         </div>
     );
 }

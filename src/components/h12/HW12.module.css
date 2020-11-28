@@ -21,3 +21,17 @@
 .some-text {
     color: darkslateblue;
 }
+.green {
+    background: darkslategrey;
+}
+
+.green-text {
+    color: antiquewhite;
+}
+.blue {
+    background: cornflowerblue;
+}
+
+.blue-text {
+    color: darkseagreen;
+}
